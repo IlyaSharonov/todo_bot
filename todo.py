@@ -24,3 +24,5 @@ while True:
 		print("Работает\n")
 	elif userAnswer == "done":
 		print("Работает\n")
+	elif userAnswer == "exit":
+		break
