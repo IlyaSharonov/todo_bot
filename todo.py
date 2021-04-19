@@ -14,18 +14,26 @@ todo = {}
 
 print('Введите команду , введите help для вывода списка команд')
 while True:
-  userAnswer = input()
+	userAnswer = input()
 
-	if userAnswer == "add":
+if userAnswer == "add":
 		userDate = input("Введите дату : \n")
 		userTask  = input("Что нужно сделать?")
 		todo[ userDate ] = userTask
 		print(f"[ {userDate} ] - добавлена задача '{userTask}'")
-	elif userAnswer == "help":
-		print(HELP)
-	elif userAnswer == "show":
-		print("Работает\n")
-	elif userAnswer == "done":
-		print("Работает\n")
-	elif userAnswer == "exit":
-		break
+
+elif userAnswer == "help":
+	print(HELP)
+
+elif userAnswer == "show":
+	for Date in todo.keys():
+		print( f"[ {date} ] - \t { todo [date] }")
+
+elif userAnswer == "done":
+	print("Работает\n")
+
+elif userAnswer == "exit":
+	break
+
+
+	
