@@ -1,39 +1,32 @@
 HELP = """
-help - список команд
-add - добавить событие
-show - показать элемент
-remove - удалить элемент
-exit - закрыть программу
+help - помощь
+add  - добавить
+show  - показать
+done   - убрать
+exit    - выкл
 """
 
-todo = {}
-# 1 - запрос даты
-# 2 - запрос задачи
-# 0 - none
+todo = {} 
+print("Введите команду или help, для вывода доступных команд")
 
-
-print('Введите команду , введите help для вывода списка команд')
 while True:
-	userAnswer = input()
+  userUnswer = input()
 
-if userAnswer == "add":
-		userDate = input("Введите дату : \n")
-		userTask  = input("Что нужно сделать?")
-		todo[ userDate ] = userTask
-		print(f"[ {userDate} ] - добавлена задача '{userTask}'")
+  if userUnswer == "add":
+    userDate = input("Введите дату:\n")
+    userTask = input("Что нужно сделать?")
 
-elif userAnswer == "help":
-	print(HELP)
-
-elif userAnswer == "show":
-	for Date in todo.keys():
-		print( f"[ {date} ] - \t { todo [date] }")
-
-elif userAnswer == "done":
-	print("Работает\n")
-
-elif userAnswer == "exit":
-	break
-
-
-	
+    if userDate in todo.keys():
+      todo[ userDate ].append( userTask )
+    else:
+      todo[ userDate ] = ( userTask )
+    todo[ userDate] = userTask
+    print(f" [ {userDate} ] - добавленная задача '{userTask}' ")
+  elif userUnswer == "help":
+    print(HELP) 
+  elif userUnswer == "show":
+    for  tasks in todo [ date]
+  elif userUnswer == "exit":
+    break 
+  elif userUnswer == "help":
+    print("Работает") 
