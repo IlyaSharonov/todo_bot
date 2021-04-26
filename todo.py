@@ -1,13 +1,23 @@
+import time
+
 HELP = """
-help - помощь
-add  - добавить
-show  - показать
-done   - убрать
-exit    - выкл
+help - список команд
+add - добавить событие
+show - показать элемент
+remove - удалить элемент
+exit - закрыть программу
 """
 
 todo = {} 
 print("Введите команду или help, для вывода доступных команд")
+
+def checkDate(uDate):
+    try:
+        time.strptime(uDate, '%d.%m.%Y')
+        return True
+    except ValueError:
+			  print("Error. Неправильный формат даты")
+        return False
 
 while True:
   userAnswer = input()
