@@ -1,47 +1,50 @@
 import time
 
+
 HELP = """
-help - список команд
-add - добавить событие
-show - показать элемент
-remove - удалить элемент
-exit - закрыть программу
+help  - список команд
+add   - добавить задачу
+show  - показать задачи
+done  - убрать выполненную задачу
+exit  - закрыть приложение
 """
 
-todo = {} 
-print("Введите команду или help, для вывода доступных команд")
+todo = {}
 
 def checkDate(date):
-	try:
-		time.strtime(date, "%d.%m.%Y")
-		return True
-	except ValueError:
-		print("Error. НЕправильный вормат даты")
-		return False
+  try:
+    time.strptime(date, "%d.%m.%Y")
+    return True
+  except ValueError:
+    print("Error. Неправильный формат даты")
+    return False
+
+def add(command, userAnswer):
+  if 
+  userDate = input( "Введите дату:\n" )
+  if checkDate(userDate) == False:
+    continue
+  userTask = input( "Что нужно сделать?" )
+
+  if userDate in todo.keys():
+    todo[ userDate ].append( userTask )
+  else:
+    todo[ userDate ] = [ userTask ]
+  print(f"[ {userDate} ] - добавлена задача '{userTask}'")
+print ("Введите команду, введите help для вывода списка команд")
 
 while True:
   userAnswer = input()
 
   if userAnswer == "add":
-    userDate = input("Введите дату:\n")
-		if checkDate(userDate) == False:
-			continue
-    userTask = input("Что нужно сделать?")
-
-    if userDate in todo.keys():
-      todo[ userDate ].append( userTask )
-    else:
-      todo[ userDate ] = ( userTask )
-    todo[ userDate] = userTask
-    print(f" [ {userDate} ] - добавленная задача '{userTask}' ")
+    
   elif userAnswer == "help":
-    print(HELP) 
+    print(HELP)
   elif userAnswer == "show":
     for date in sorted( todo.keys() ):
       for tasks in todo[ date ]:
-        print( f"[{date}] - {tasks}" ) 
+        print( f"[ {date} ] - {tasks}" )
   elif userAnswer == "exit":
     break
-  elif userAnswer == "help":
-    print("Работает") 
-
+  elif userAnswer == "done":
+    print("Работает\n") 
