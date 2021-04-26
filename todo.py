@@ -20,7 +20,11 @@ def checkDate(date):
     return False
 
 def add(command, userAnswer):
-  if 
+  if command == 1:
+		#give date
+	else command == 2:
+		#give date
+
   userDate = input( "Введите дату:\n" )
   if checkDate(userDate) == False:
     continue
